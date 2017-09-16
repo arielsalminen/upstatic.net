@@ -78,6 +78,7 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 set :fonts_dir, 'fonts'
+set :build_dir, 'docs'
 
 # Pretty urls
 activate :directory_indexes
