@@ -1,0 +1,12 @@
+Bucket = "beta.upstatic.io"
+UploadDir = "build"
+Account = "upstatic"
+GzipExtensions = [ ".html", ".xml", ".json", ".svg", ".css", ".js" ]
+
+[Extension.html]
+ContentType = "text/html"
+CacheControl = "public, s-maxage=10, max-age=60"
+
+[Extension.jpg]
+ContentType = "image/jpeg"
+CacheControl = "max-age=31536000, public"

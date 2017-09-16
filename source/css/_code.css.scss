@@ -1,0 +1,168 @@
+
+/* CODE
+--------------------------------------------- */
+
+pre, code {
+  font-family: "oxygen-mono-custom", "panic sans", Monaco, monospace, monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 15px;
+}
+
+pre {
+  box-shadow: 0 0 20px rgba(0,0,0, .1);
+  position: relative;
+  min-height: 190px;
+  max-width: 300px;
+  background: #202934;
+  b,i {
+    color: #88c565;
+    font-weight: normal;
+  }
+  i {
+    color: #cce3bf;
+  }
+  span {
+    color: #79889a;
+  }
+  &:before {
+    content: "";
+    box-shadow: inset 0 0 2px #f4f3f4, 0 0 20px rgba(0,0,0, .1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 22px;
+    background: #e4e1e4;
+    position: absolute;
+    top: -22px;
+    left: 0;
+    right: 0;
+  }
+  &:after {
+    content: "";
+    top: -17px;
+    left: 8px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ff6058;
+    box-shadow: inset 0 0 0 1px rgba(#e2453f, .7);
+    border-radius: 100%;
+  }
+  code {
+    padding: 22px 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:after,
+    &:before {
+      content: "";
+      top: -17px;
+      left: 27px;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #ffbd2d;
+      box-shadow: inset 0 0 0 1px rgba(#df9f23, .7);
+      border-radius: 100%;
+    }
+    &:before {
+      left: 46px;
+      background: #27c93f;
+      box-shadow: inset 0 0 0 1px rgba(#1bab2c, .7);
+    }
+  }
+}
+
+code::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: lighten(#202934, 2%);
+  width: 8px;
+  height: 8px;
+}
+
+code::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: lighten(#202934, 10%);
+}
+
+
+/* TERMINAL
+--------------------------------------------- */
+
+#terminal {
+  cursor: default;
+  html.js & {
+    cursor: pointer;
+  }
+  code {
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+  }
+}
+
+.restart .cursor {
+  -webkit-animation: 1.99s blink2 infinite;
+  animation: 1.99s blink2 infinite;
+}
+
+.deploy {
+  -webkit-font-smoothing: antialiased;
+  code {
+    color: transparent;
+    .cursor {
+      display: none;
+    }
+  }
+  .progress {
+    -webkit-animation: progress 3s .6s ease-in-out forwards;
+    animation: progress 3s .6s ease-in-out forwards;
+  }
+  .progress-ongoing {
+    -webkit-animation: show-hide 3.9s .2s ease forwards;
+    animation: show-hide 3.9s .2s ease forwards;
+  }
+  .progress-done {
+    -webkit-animation: show .4s 3.9s ease forwards;
+    animation: show .4s 3.9s ease forwards;
+  }
+}
+
+.cursor {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: 2s blink infinite;
+  animation: 2s blink infinite;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 7px;
+  width: 2px;
+  height: 21px;
+  background: #88c565;
+}
+
+.progress {
+  border-radius: 1px;
+  display: block;
+  position: absolute;
+  background: #88c565;
+  height: 21px;
+  width: 0;
+  z-index: 1;
+  top: 54px;
+  left: 24px;
+}
+
+.progress-done,
+.progress-ongoing {
+  top: 22px;
+  left: 24px;
+  opacity: 0;
+  display: block;
+  visibility: hidden;
+  z-index: 2;
+  color: $white;
+  position: absolute;
+}

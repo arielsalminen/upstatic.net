@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="apple-mobile-web-app-title" content="Upstatic">
+  <meta name="description" content="<%= current_page.data.description || 'Upstatic is a free tool that makes deploying websites to Amazon S3 as easy as pushing changes to GitHub. We automatically configure S3 for you, so you don’t have to.' %>">
+  <meta name="theme-color" content="#161e27">
+  <title><%= current_page.data.title || "Upstatic — Deploy static websites to Amazon S3" %></title>
+  <%= partial "open-graph" %>
+  <%= partial "twitter-card" %>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/img/appicon.png">
+  <%= stylesheet_link_tag "all" %>
+  <script>
+    document.documentElement.className += " js";
+    <% if current_page.path == "usage.html" %>
+      if (!!window.addEventListener && !!document.querySelectorAll && ("classList" in document.documentElement)) {
+        document.documentElement.className += " js-suggest";
+      }
+    <% end %>
+  </script>
+  <!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
+</head>

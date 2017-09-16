@@ -1,0 +1,126 @@
+
+/* SHOW
+--------------------------------------------- */
+
+@-webkit-keyframes show {
+  0% { opacity: 0; visibility: hidden; }
+  66.666% { opacity: 0; visibility: hidden; }
+  100% { opacity: 1; visibility: visible; }
+}
+@keyframes show {
+  0% { opacity: 0; visibility: hidden; }
+  66.666% { opacity: 0; visibility: hidden; }
+  100% { opacity: 1; visibility: visible; }
+}
+
+/* SHOW & HIDE
+--------------------------------------------- */
+
+@-webkit-keyframes show-hide {
+  0% { opacity: 0; visibility: hidden; }
+  7% { opacity: 1; visibility: visible; }
+  95% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@keyframes show-hide {
+  0% { opacity: 0; visibility: hidden; }
+  7% { opacity: 1; visibility: visible; }
+  95% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+
+/* BLINK
+--------------------------------------------- */
+
+@-webkit-keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: 1 }
+  51% { opacity: 0 }
+  100% { opacity: 0 }
+}
+@keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: 1 }
+  51% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-webkit-keyframes blink2 {
+  0% { opacity: 1 }
+  50% { opacity: 1 }
+  51% { opacity: 0 }
+  100% { opacity: 0 }
+}
+@keyframes blink2 {
+  0% { opacity: 1 }
+  50% { opacity: 1 }
+  51% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+/* PROGRESS
+--------------------------------------------- */
+
+@-webkit-keyframes progress {
+  0% { width: 0 }
+  100% { width: 234px }
+}
+@keyframes progress {
+  0% { width: 0 }
+  100% { width: 234px }
+}
+
+/* HEIGHT
+--------------------------------------------- */
+
+@-webkit-keyframes height {
+  0% { height: 100px }
+  10% { height: 100px }
+  20% { height: 94px }
+  40% { height: 94px }
+  50% { height: 100px }
+}
+@keyframes height {
+  0% { height: 100px }
+  10% { height: 100px }
+  20% { height: 94px }
+  40% { height: 94px }
+  50% { height: 100px }
+}
+
+/* HEIGHT TALLER
+--------------------------------------------- */
+
+@-webkit-keyframes taller {
+  0% { height: 162px }
+  70% { height: 162px }
+  80% { height: 172px }
+  90% { height: 172px }
+  100% { height: 162px }
+}
+@keyframes taller {
+  0% { height: 162px }
+  70% { height: 162px }
+  80% { height: 172px }
+  90% { height: 172px }
+  100% { height: 162px }
+}
+
+/* HEIGHT ADJUST
+--------------------------------------------- */
+
+@-webkit-keyframes adjust {
+  0% { height: 130px }
+  40% { height: 130px }
+  50% { height: 136px }
+  70% { height: 136px }
+  80% { height: 130px }
+}
+@keyframes adjust {
+  0% { height: 130px }
+  40% { height: 130px }
+  50% { height: 136px }
+  70% { height: 136px }
+  80% { height: 130px }
+}

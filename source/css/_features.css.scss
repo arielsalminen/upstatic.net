@@ -1,0 +1,368 @@
+
+/* SECTIONS
+--------------------------------------------- */
+
+section {
+  position: relative;
+  text-align: center;
+  float: left;
+  width: 100%;
+  .ie & { width: auto }
+  border-bottom: 1px solid lighten($blue-dark, 10%);
+  padding: 3.5em 0;
+  @include breakpoint(large) {
+    padding: 5em 1.5em 5.5em 2em;
+    text-align: left;
+  }
+  @media (min-width: em(1160)) {
+    padding: 100px 40px 120px 60px;
+  }
+
+  &.download {
+    margin-top: -1em;
+    padding: 0 0 4.5em;
+    color: darken($grey, 20%);
+    border: 0;
+    @include breakpoint(medium) {
+      padding: 0 0 7.5em;
+    }
+    @media (min-width: em(1300)) and (min-height: em(800)) {
+      font-size: 22px;
+    }
+    h2 {
+      margin-bottom: 1.3em;
+      text-align: center;
+      float: none;
+    }
+    div { text-align: center }
+    .btn {
+      width: em(190);
+      @media (min-width: em(500)) {
+        width: 51%;
+      }
+      @include breakpoint(medium) {
+        width: em(150);
+      }
+    }
+  }
+
+  .btn {
+    margin: 0.6em auto 0;
+    float: none;
+  }
+
+  .btn-separator {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0.5em;
+    display: none;
+    @include breakpoint(medium) {
+      display: inline;
+    }
+  }
+
+  h1 { margin: 1em 0 0.5em }
+
+  h2,h3 {
+    margin: 0 0 0.8em;
+    line-height: 1.3;
+    @include breakpoint(large) {
+      font-size: 28px;
+      margin-bottom: 0.6em;
+      float: left;
+      width: 100%;
+    }
+    @media (min-width: em(1100)) {
+      font-size: 32px;
+    }
+    @media (min-width: em(1400)) and (min-height: em(1000)) {
+      font-size: 34px;
+    }
+    @media (min-width: em(1800)) and (min-height: em(1300)) {
+      font-size: 36px;
+    }
+  }
+
+  h3 { font-size: 100% }
+
+  p, ul.changelog li {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: em(500);
+    color: darken($grey, 7%);
+    @media (min-width: em(400)) {
+      font-size: 87.5%;
+    }
+    @include breakpoint(medium) {
+      font-size: 18px;
+    }
+    @include breakpoint(large) {
+      max-width: none;
+      font-size: 16px;
+      float: left;
+      width: 47%;
+      margin: 0;
+    }
+    @media (min-width: em(1100)) {
+      font-size: 18px;
+    }
+    @media (min-width: em(1400)) and (min-height: em(1000)) {
+      font-size: 20px;
+    }
+    @media (min-width: em(1800)) and (min-height: em(1300)) {
+      font-size: 22px;
+    }
+
+    a {
+      color: $blue-light;
+      -webkit-transition: color .3s ease;
+      transition: color .3s ease;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5389b1), color-stop(100%, #5389b1));
+      background-image: -webkit-linear-gradient(#5389b1, #5389b1);
+      background-image: linear-gradient(#5389b1, #5389b1);
+      text-shadow:  1px 0 0 $blue-dark, 2px 0 0 $blue-dark,
+        3px 0 0 $blue-dark, -1px 0 0 $blue-dark, -2px 0 0 $blue-dark,
+        -3px 0 0 $blue-dark, 0 1px 0 $blue-dark;
+      background-position: 0 1.17em;
+      background-repeat: repeat-x;
+      background-size: 1px 1px;
+      text-decoration: none;
+      @media (min-width: em(1400)) and (min-height: em(1000)) {
+        background-position: 0 1.23em;
+      }
+      &:hover {
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $blue-light), color-stop(100%, $blue-light));
+        background-image: -webkit-linear-gradient($blue-light, $blue-light);
+        background-image: linear-gradient($blue-light, $blue-light);
+        color: mix($white, $blue-light, 80%);
+      }
+      &:active { opacity: 0.6 }
+    }
+  }
+
+  &.alt h2,
+  &.alt p {
+    @include breakpoint(large) {
+      float: right;
+      clear: both;
+      width: 47%;
+    }
+  }
+
+  p code {
+    border-radius: 3px;
+    background: #202934;
+    padding: 0.35em 0.6em;
+    color: $white;
+    @include breakpoint(large) {
+      font-size: 14px;
+    }
+  }
+
+  img,
+  .graph {
+    position: relative;
+    overflow: hidden;
+    margin: 2em auto 0;
+    height: auto;
+    width: 100%;
+    .ie & { width: 60% }
+    // IE8 fix
+    @media (min-width: 1px) {
+      max-width: 305px;
+    }
+    @media (min-width: em(400)) {
+      width: 80%;
+    }
+    @include breakpoint(large) {
+      position: absolute;
+      right: 6%;
+      top: 20%;
+      float: right;
+      margin: 0;
+    }
+    @media (min-width: em(1100)) {
+      right: 11%;
+    }
+  }
+
+  .graph { height: 235px }
+
+  &.alt img,
+  &.alt .graph {
+    @include breakpoint(large) {
+      right: auto;
+      left: 6%;
+    }
+    @media (min-width: em(1100)) {
+      left: 11%;
+    }
+  }
+
+  pre {
+    margin: 4.5em auto 0.5em;
+    width: 100%;
+    .ie & { width: 60% }
+    // IE8 fix
+    @media (min-width: 1px) {
+      max-width: 280px;
+    }
+    @media (min-width: em(400)) {
+      width: 80%;
+    }
+    @include breakpoint(large) {
+      position: absolute;
+      right: 7.5%;
+      top: 28.5%;
+      float: right;
+      margin: 0;
+    }
+    @media (min-width: em(1100)) {
+      right: 12%;
+    }
+  }
+}
+
+.graph {
+  div {
+    -webkit-animation: adjust 7s ease infinite;
+    animation: adjust 7s ease infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: absolute;
+    bottom: 40px;
+    left: 45px;
+    width: 49px;
+    height: 130px;
+    background: #5389b1;
+    &:before {
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      height: 20px;
+      width: 49px;
+      background: #63a3d2;
+    }
+    &:after {
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      height: 20px;
+      width: 49px;
+      background: #5389b1;
+    }
+  }
+  .bar-2 {
+    -webkit-animation: height 7s ease infinite;
+    animation: height 7s ease infinite;
+    height: 100px;
+    left: 119px;
+    background: #559882;
+    &:before { background: #60b297 }
+    &:after { background: #559882 }
+  }
+  .bar-3 {
+    -webkit-animation: taller 7s ease infinite;
+    animation: taller 7s ease infinite;
+    height: 162px;
+    left: 193px;
+    background: #a4402b;
+    &:before { background: #c45b4b }
+    &:after { background: #a4402b }
+  }
+}
+
+
+/* QUOTES
+--------------------------------------------- */
+
+.quotes-wrapper {
+  border: 0;
+}
+
+.quotes {
+  font-size: 14px;
+  color: darken($grey, 7%);
+  @media (min-width: em(450)) {
+    text-align: left;
+  }
+  @include breakpoint(medium) {
+    font-size: 16px;
+  }
+  @media (min-width: em(1400)) and (min-height: em(1100)) {
+    font-size: 18px;
+  }
+  @media (min-width: em(1800)) and (min-height: em(1300)) {
+    font-size: 20px;
+  }
+  .quote {
+    position: relative;
+    margin-bottom: 0.9em;
+    &:before {
+      content: "“";
+      color: #303b48;
+      font-weight: 700;
+      font-size: 1.8em;
+      position: absolute;
+      margin: -0.45em 0 0 -0.55em;
+    }
+  }
+  .by {
+    color: $white;
+    font-weight: 700;
+  }
+  li {
+    width: 90%;
+    max-width: 520px;
+    margin: 0 auto 4em;
+    @include breakpoint(large) {
+      min-height: em(150);
+      float: left;
+      width: 45%;
+      &:nth-child(2n+2) {
+        float: right;
+      }
+    }
+    @media (min-width: em(1050)) {
+      width: 43%;
+      min-height: em(140);
+      margin-left: 2%;
+      &:nth-child(2n+2) {
+        margin-left: 0;
+        margin-right: 4%;
+      }
+    }
+    @media (min-width: em(1300)) {
+      min-height: em(100);
+    }
+  }
+  .quote-1, .quote-2,
+  .quote-3, .quote-4 {
+    background: url("../img/user-joni.png") no-repeat 50% 0;
+    .ie & { background-image: url("../img/user-joni-oldie.png") }
+    background-size: em(70) em(70);
+    padding-top: em(88);
+    @media (min-width: em(450)) {
+      background-size: 68px 68px;
+      background-position: 0 0;
+      padding: 0 0 0 100px;
+    }
+  }
+  .quote-2 {
+    background-image: url("../img/user-brad.png");
+    .ie & { background-image: url("../img/user-brad-oldie.png") }
+  }
+  .quote-3 {
+    background-image: url("../img/user-viljami.png");
+    .ie & { background-image: url("../img/user-viljami-oldie.png") }
+  }
+  .quote-4 {
+    background-image: url("../img/user-ben.png");
+    .ie & { background-image: url("../img/user-ben-oldie.png") }
+  }
+}

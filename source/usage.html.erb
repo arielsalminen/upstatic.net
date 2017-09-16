@@ -1,0 +1,132 @@
+---
+title: Usage instructions — Upstatic
+description: This guide will help you to learn all the basic and advanced features Upstatic provides.
+banner: <h1>Getting started with&nbsp;Upstatic</h1><p class="intro">This guide will help you to get ready for your first deploy. We’ll also cover all the advanced features and how&nbsp;to&nbsp;use&nbsp;them.</p>
+---
+
+<section class="sub">
+<h2 id="whats-about">What’s it all about?</h2>
+
+<p>Amazon S3 is great for hosting static websites. Not only because of the performance and reliability, but also because it’s extremely <a href="#pricing">affordable</a>. But S3 can be challenging to set up and&nbsp;optimize.</p>
+
+<p>That’s why we created <a href="/">Upstatic</a>—a free tool that automatically configures and optimizes S3 for static website hosting and takes care of the&nbsp;deploying.</p>
+
+<h2 id="why-use">Why use it?</h2>
+
+<p>Static websites are getting more and more popular since they can be served much faster to the user, they’re easy to maintain and don’t need databases you need to worry&nbsp;about.</p>
+
+<p>While there are bunch of tools that can deploy static sites straight to <a href="http://aws.amazon.com/s3/" rel="external">Amazon S3</a>, we couldn’t find a single one which would have all the features, speed and ease of use we want from such tool.</p>
+
+<p>Finally, Upstatic isn’t dependent on any external library, adminis&shy;trative privilege, database, runtime or interpreter on your system, so it’ll continue working even though you update your operating system or do any other changes.</p>
+
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>Using Upstatic is simple. First make sure you’ve downloaded lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <code>tempor incididunt ut</code> labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia ad minim venim lorem.</p>
+
+<pre><code><b>[Upstatic]</b>
+Bucket = "upstatic.io"
+Account = "personal"
+UploadDir = "/build"
+</code></pre>
+
+<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu <a href="#">fugiat nulla</a> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+
+<h2 id="best-practices">Best practices</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <code>incididunt ut labore</code> et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu <code>fugiat nulla</code> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<pre><code><b>[Upstatic]</b>
+Bucket = "upstatic.io"
+Account = "personal"
+Region = "eu-west-1"
+UploadDir = "/home/upstatic/site"
+DefaultCacheControl = "private, max-age=0"
+GzipExtensions = [".html", ".xml", ".json"]
+</code></pre>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+
+<h2 id="accounts">User accounts</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <code>incididunt ut labore</code> et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+
+<pre><code><b>[Extension.ttf]</b>
+CacheControl = "public, max-age=3600"
+ContentType  = "font/ttf"
+
+<b>[Extension.html]</b>
+CacheControl = "public, s-maxage=600, max-age=0"
+
+<b>[Redirect]</b>
+Rules = [
+  ["/twitter", "https://twitter.com/upstatic"]
+]
+</code></pre>
+
+<h2 id="content-types">Content types</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipiscing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<h2 id="caching">Caching</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<h2 id="gzipping">Gzipping</h2>
+
+<p>Lorem ipsum dolor sit amet, et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<h2 id="redirects">Redirects</h2>
+
+<p>Redirects are defined in the <a href="#getting-started">Upstatic configuration file</a> which is usually located inside the directory you’re deploying. Alternatively, if you didn’t use <code>upstatic init</code> command, you might not have the configuration file and have to <a href="#advanced">create it manually</a>.</p>
+
+<p>Adding and editing redirects is very straightforward. First, you need to enable redirects by adding <code>[Redirects]</code> header to the configuration file. Then, inside <code>Rules</code>, you can start defining them:</p>
+
+<pre><code><b>[Redirects]</b>
+Rules = [
+  ["/old", "/new"]
+  ["/ups", "/upstatic"]
+  ["/twitter", "https://twitter.com/upstatic"]
+  ["/post-with-wrong-title", "/new-with-corrected-title"]
+]
+</code></pre>
+
+<p>Currently, you can only do <a href="http://en.wikipedia.org/wiki/HTTP_301" rel="external">301 permanent redirects</a>, which point any URL under your domain to a different URL on a permanent basis. This is the most common type of redirect and usually the most useful too.</p>
+
+<h2 id="advanced">Advanced</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<h2 id="pricing">Amazon S3 pricing</h2>
+
+<p>Amazon S3 is extremely affordable for static website hosting. If you’re a new user, you can <a href="http://aws.amazon.com/free/" rel="external">get started without any&nbsp;costs</a>.</p>
+
+<p>Upon <a href="http://aws.amazon.com/s3/" rel="external">sign up</a>, new customers receive 5GB of storage, 20,000 requests and 15GB of data transfer each month for free. This means you’d be most likely hosting your website without any costs&nbsp;during the first&nbsp;year! Amazon will only ever invoice you for the requests and data that go over these limits.</p>
+
+<p>After the first year, Amazon will invoice you monthly based on the amount of requests and data transferred. Based on the current Amazon <a href="http://aws.amazon.com/s3/pricing/" rel="external">pricing table</a>, an average website with 100,000 visitors each month and a page weight of 300kB would cost you under $4/month.</p>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3 id="v1.0.0">v1.0.0</h3>
+<ul class="changelog">
+    <li>Initial release</li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>Licensed under the <a href="http://opensource.org/licenses/mit-license.php" rel="external">MIT License</a>.</p>
+
+</section>
+
+<section class="download">
+<h2 class="hide">Download</h2>
+<div><a href="/download/" class="btn">Download</a> <span class="btn-separator">or</span> <a href="#" class="btn btn-secondary">View on GitHub</a></div>
+</section>

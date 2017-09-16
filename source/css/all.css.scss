@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import "compass/css3";
+
+
+/* HELPERS
+--------------------------------------------- */
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+@mixin prevent-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin hide-only-visually {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px 0 0 -1px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+
+/* COLORS
+--------------------------------------------- */
+
+$blue       :   #215a84;
+$blue-light :   #98cfea;
+$blue-dark  :   #161e27;
+$grey       :   #abafb3;
+$white      :   #fff;
+
+
+/* TYPEFACES
+--------------------------------------------- */
+
+$heading    :   "museo-sans-rounded-custom", "Helvetica Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body       :   "oxygen-custom", sans-serif;
+
+
+/* MEDIA QUERIES
+--------------------------------------------- */
+
+@mixin breakpoint($media) {
+  @if $media == medium {
+    @media (min-width: em(660)) { @content; }
+  }
+  @else if $media == large {
+    @media (min-width: em(860)) { @content; }
+  }
+  @else if $media == highres {
+    @media (min-width: em(860)) and (-webkit-min-device-pixel-ratio: 1.25),
+           (min-width: em(860)) and (-o-min-device-pixel-ratio: 5/4),
+           (min-width: em(860)) and (min-resolution: 120dpi) { @content; }
+  }
+}
+
+
+/* CLEARFIX
+--------------------------------------------- */
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/* UPSTATIC.IO STYLES
+--------------------------------------------- */
+
+@import "fonts";
+@import "reset";
+@import "base";
+@import "animation";
+@import "header";
+@import "banner";
+@import "footer";
+@import "button";
+@import "tooltip";
+@import "features";
+@import "usage";
+@import "code";
+@import "downloads";
+@import "search";
+@import "notice";
+@import "scale";

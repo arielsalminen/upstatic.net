@@ -1,0 +1,153 @@
+
+/* UPSTATIC.IO STYLES
+--------------------------------------------- */
+.js-suggest #search {
+  display: block !important;
+}
+
+form {
+  position: relative;
+  text-align: center;
+  margin: 2em auto 0;
+  max-width: em(350);
+  width: 90%;
+  label { @include hide-only-visually }
+}
+
+::-webkit-input-placeholder { color: #8fb9d4 }
+:-moz-placeholder { color: #8fb9d4 }
+::-moz-placeholder {  color: #8fb9d4 }
+:-ms-input-placeholder { color: #8fb9d4 }
+
+#search {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: $body;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  line-height: normal;
+  padding: em(12) em(18) em(14) em(46);
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid darken($blue, 4%);
+  background: rgba($white, .12) image-url("search.png") no-repeat em(14) 50%;
+  background-size: 24px 23px;
+  color: #8fb9d4;
+  &:hover {
+    background-color: rgba($white, .17);
+  }
+  &.focus,
+  &:focus {
+    box-shadow: inset 0 0 0 1px rgba($white, .3);
+    background-color: rgba($white, .12);
+    cursor: text;
+    color: $white;
+    outline: none;
+    @include breakpoint(large) {
+      width: 110%;
+      margin-left: -5%;
+    }
+  }
+  @media (min-width: em(400)) {
+    font-size: 87.5%;
+  }
+  @include breakpoint(medium) {
+    background-position: em(18) 50%;
+    padding: em(16) em(18) em(18) em(56);
+  }
+  @include breakpoint(large) {
+    -webkit-transition: width .4s ease, margin .4s ease, background-color .4s ease;
+    transition: width .4s ease, margin .4s ease, background-color .4s ease;
+    font-size: 75%;
+  }
+}
+
+
+/* SEARCH SUGGESTIONS
+--------------------------------------------- */
+
+#suggestions {
+  box-shadow: 0 4px 10px rgba($blue-dark, .3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: rgba($white, .9);
+  display: none;
+  max-height: em(200);
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 2.65em;
+  @media (min-width: em(400)) {
+    max-height: em(180);
+    top: 2.5em;
+  }
+  @include breakpoint(large) {
+    left: -5%;
+    width: 110%;
+    max-height: em(186);
+  }
+  li {
+    text-align: left;
+    font-size: 100%;
+    float: left;
+    width: 100%;
+    @media (min-width: em(400)) {
+      font-size: 87.5%;
+    }
+    @include breakpoint(large) {
+      font-size: 75%;
+    }
+  }
+  a {
+    float: left;
+    width: 100%;
+    padding: 0.75em 1.15em;
+    color: #444;
+    &:focus {
+      outline: none;
+    }
+  }
+  .active a {
+    background: darken($blue, 8%);
+    color: $white;
+  }
+  .submit a,
+  .active a:active {
+    background: darken($blue, 18%);
+  }
+}
+
+
+/* LOADING INDICATOR
+--------------------------------------------- */
+
+.loading {
+  -webkit-transition: all 0.5s 0.1s ease;
+  transition: all 0.5s 0.1s ease;
+  background: transparent image-url("loader.gif") no-repeat 50% 50%;
+  background-size: em(22) em(22);
+  width: em(22);
+  height: em(22);
+  position: absolute;
+  z-index: 2;
+  right: 0.7em;
+  top: 0.55em;
+  visibility: hidden;
+  opacity: 0;
+  @include breakpoint(large) {
+    right: -0.4em;
+  }
+  &.active {
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    visibility: visible;
+    opacity: 1;
+  }
+}

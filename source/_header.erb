@@ -1,0 +1,17 @@
+<header>
+  <div class="wrapper">
+    <nav class="nav" role="navigation">
+      <h2 class="hide">Navigation</h2>
+      <ul>
+        <%= nav_link("Home", "/", {class: "nav-1"}) %>
+        <%= nav_link("Features", "/features/", {class: "nav-2"}) %>
+        <%= nav_link("Usage <span>instructions</span>", "/usage/", {class: "nav-3"}) %>
+        <%= nav_link("Download", "/download/", {class: "nav-4"}) %>
+      </ul>
+    </nav>
+    <a href="/" class="home" tabindex="-1">
+      <img src="/img/logo-icon.svg" class="logo logo-icon" alt="" onerror="this.onerror=null; this.src='/img/logo-icon.png'">
+      <img src="/img/logo-text.svg" class="logo logo-text" alt="Upstatic" onerror="this.onerror=null; this.src='/img/logo-icon.png'">
+    </a>
+  </div>
+</header>

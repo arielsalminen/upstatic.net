@@ -1,0 +1,46 @@
+
+/* BUTTONS
+--------------------------------------------- */
+
+.btn {
+  -webkit-transition: background .3s ease, border .3s ease;
+  transition: background .3s ease, border .3s ease;
+  @include prevent-user-select;
+  border-radius: 5px;
+  border: 1px solid $white;
+  font-family: $heading;
+  background: transparent;
+  padding: em(8) 0 em(9.5);
+  display: inline-block;
+  text-align: center;
+  margin: em(26) 0 0;
+  font-size: em(18);
+  font-weight: 700;
+  width: em(170);
+  &.btn-secondary {
+    border-color: #2c3845;
+    background: #2c3845;
+    &:hover {
+      border-color: lighten(#2c3845, 10%);
+      background: lighten(#2c3845, 10%);
+    }
+    &:active {
+      border-color: lighten(#2c3845, 5%);
+      background: lighten(#2c3845, 5%);
+    }
+  }
+  &:hover {
+    border: 1px solid $blue;
+    background: $blue;
+  }
+  &:active,
+  &:focus {
+    border: 1px solid darken($blue, 10%);
+    background: darken($blue, 10%);
+    outline: 0;
+  }
+  @include breakpoint(large) {
+    margin: em(8) 0 0;
+    font-size: em(16);
+  }
+}

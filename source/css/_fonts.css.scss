@@ -1,0 +1,43 @@
+
+/* FONT-FACES
+--------------------------------------------- */
+
+@font-face {
+  font-family: 'oxygen-custom';
+  font-weight: 400;
+  font-style: normal;
+  src: font-url('oxygen/oxygen-regular.eot');
+  src: font-url('oxygen/oxygen-regular.eot?#iefix') format('embedded-opentype'),
+       font-url('oxygen/oxygen-regular.woff') format('woff'),
+       font-url('oxygen/oxygen-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'oxygen-custom';
+  font-weight: 700;
+  font-style: normal;
+  src: font-url('oxygen/oxygen-bold.eot');
+  src: font-url('oxygen/oxygen-bold.eot?#iefix') format('embedded-opentype'),
+       font-url('oxygen/oxygen-bold.woff') format('woff'),
+       font-url('oxygen/oxygen-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'oxygen-mono-custom';
+  font-weight: normal;
+  font-style: 400;
+  src: font-url('oxygen/oxygen-mono.eot');
+  src: font-url('oxygen/oxygen-mono.eot?#iefix') format('embedded-opentype'),
+       font-url('oxygen/oxygen-mono.woff') format('woff'),
+       font-url('oxygen/oxygen-mono.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'museo-sans-rounded-custom';
+  font-weight: 700;
+  font-style: normal;
+  src: font-url('museo-sans-rounded/museo-sans-rounded-700.eot');
+  src: font-url('museo-sans-rounded/museo-sans-rounded-700.eot?#iefix') format('embedded-opentype'),
+       font-url('museo-sans-rounded/museo-sans-rounded-700.woff') format('woff'),
+       font-url('museo-sans-rounded/museo-sans-rounded-700.ttf') format('truetype');
+}

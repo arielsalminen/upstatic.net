@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <%= partial "head" %>
+  <body class="index">
+    <div class="container">
+      <%= partial "header" %>
+      <main role="banner">
+        <div class="banner">
+          <div class="wrapper">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
+      <footer role="main">
+        <div class="wrapper">
+          <h2>Upstatic is a free tool that automatically configures and optimizes Amazon&nbsp;S3 for <span>static</span> website hosting and deploys when you need&nbsp;it&nbsp;to. <a href="/features/">Read&nbsp;more</a></h2>
+          <div class="footer-actions">
+            <a href="/download/" class="btn" data-tooltip="…or run “brew install upstatic”">Download</a>
+            <a href="/" rel="external" class="tip">View source on GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <%= javascript_include_tag "all" %>
+    <%= partial "tracking" %>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+
+/* CSS TOOLTIPS
+--------------------------------------------- */
+
+[data-tooltip] {
+  position: relative;
+  &:before,
+  &:after {
+    content: none;
+    content: normal;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    &:before,
+    &:after {
+      -webkit-animation: .8s show linear;
+      animation: .8s show linear;
+    }
+    &:before {
+      content: "";
+    }
+    &:after {
+      -webkit-font-smoothing: antialiased;
+      content: attr(data-tooltip);
+    }
+  }
+  &:after {
+    .iefix & {
+      display: none !important;
+    }
+    @include transform(translateX(-50%));
+    font: 400 12px/em(32) $body;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    padding: 0 8px;
+    margin-top: 7px;
+    white-space: nowrap;
+    color: mix($grey, $blue-dark, 80%);
+    background-color: $blue-dark;
+    z-index: 1;
+    @include breakpoint(large) {
+      line-height: em(22);
+      font-size: 0.55em;
+    }
+    @media (min-width: em(1500)) and (min-height: em(1200)) {
+      font-size: 15px;
+    }
+  }
+}

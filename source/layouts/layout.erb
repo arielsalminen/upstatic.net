@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <%= partial "head" %>
+  <body class="sub <%= page_classes %>">
+    <div class="notice" title="Dismiss?"><p>Upstatic is <span class="r2">currently</span> a “work in progress.” <span class="r">Release soon!</span></p> <img src="/img/close.svg" alt="Dismiss"></div>
+    <div class="container">
+      <%= partial "header" %>
+      <main role="main">
+        <div class="banner">
+          <div class="wrapper">
+            <div class="banner-box">
+              <%= current_page.data.banner %>
+              <% if current_page.path == "usage.html" %>
+                <%= partial "suggest-search" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="wrapper">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
+      <%= partial "footer" %>
+    </div>
+    <%= javascript_include_tag "all" %>
+    <% if current_page.path == "usage.html" %>
+      <%= javascript_include_tag "suggest" %>
+    <% end %>
+    <%= partial "tracking" %>
+  </body>
+</html>

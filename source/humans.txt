@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Joao Carlos -- developer -- https://twitter.com/jcxplorer
+    Viljami Salminen -- designer -- https://twitter.com/viljamis
+
+# THANKS
+
+    Matias Korhonen -- https://twitter.com/matiaskorhonen
+    Ben Brignell -- https://twitter.com/benbrignell
+    Joni Korpi -- https://twitter.com/jonikorpi

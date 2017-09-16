@@ -1,0 +1,181 @@
+
+/* HEADER
+--------------------------------------------- */
+
+header {
+  position: absolute;
+  font-weight: 700;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  top: 0;
+  @include breakpoint(large) {
+    top: 7%;
+  }
+  @media (min-width: em(860)) and (min-height: em(900)) {
+    top: 3em;
+  }
+  @media (min-width: em(860)) and (max-height: em(699)) {
+    top: 2.5em;
+  }
+  .home:active {
+    .logo-arrow {
+      fill: $blue-light;
+    }
+  }
+  .logo {
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+      height: em(33);
+      width: em(100);
+    }
+  }
+  .logo-text {
+    margin: em(2) 0 0 em(1);
+    float: left;
+  }
+  .logo-icon {
+    margin-top: em(-2);
+    width: em(35);
+    float: left;
+  }
+}
+
+
+/* LOGO
+--------------------------------------------- */
+
+.logo {
+  margin: 0 auto;
+  width: em(107);
+  height: em(40);
+  .logo-arrow {
+    @include transform(translateY(0));
+    -webkit-animation: move 5.8s infinite;
+    animation: move 5.8s infinite;
+  }
+}
+
+/* NAV
+--------------------------------------------- */
+
+.nav {
+  @include prevent-user-select;
+  table-layout: fixed;
+  text-align: center;
+  font-size: 87.5%;
+  display: table;
+  width: 100%;
+  margin: 20px auto 0;
+  @include breakpoint(medium) {
+    margin-top: 5%;
+  }
+  @include breakpoint(large) {
+    font-size: 75%;
+    width: em(500);
+    float: right;
+    margin: 0;
+  }
+  ul {
+    line-height: normal;
+    margin: 0;
+    width: 100%;
+    display: table-row;
+    .ie & {
+      display: block;
+    }
+    @include breakpoint(large) {
+      margin-top: 3px;
+      width: 100%;
+    }
+  }
+  li {
+    display: table-cell;
+    white-space: nowrap;
+    .ie & {
+      float: left;
+      display: block;
+      width: 25% !important;
+    }
+    &.nav-1 {
+      width: 22%;
+      @include breakpoint(large) {
+        width: 18%;
+      }
+      a {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding-left: em(11);
+      }
+    }
+    &.nav-2 {
+      @include breakpoint(large) {
+        width: 22%;
+      }
+    }
+    &.nav-3 {
+      width: 21%;
+      @include breakpoint(large) {
+        width: 36.5%;
+      }
+    }
+    &.nav-4 {
+      width: 31%;
+      @include breakpoint(large) {
+        width: auto;
+      }
+      a {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        padding-right: em(11);
+        border-right: 0;
+      }
+    }
+  }
+  a {
+    overflow: hidden;
+    -webkit-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+    background: $blue;
+    line-height: 1.22;
+    background: rgba($white, .13);
+    padding: em(15) em(8);
+    display: block;
+    position: relative;
+    width: 100%;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($blue, .22);
+    }
+    .ie & {
+      width: auto;
+    }
+    @include breakpoint(medium) {
+      padding: em(18) em(8) em(19.5);
+    }
+    @include breakpoint(large) {
+      padding: em(15) em(8) em(16.5);
+    }
+    &:hover {
+      background: rgba(mix($white, $blue, 50%), .2);
+    }
+    &:active {
+      -webkit-transition: none;
+      transition: none;
+      background: rgba(mix($white, $blue, 40%), .2);
+    }
+  }
+  .active a {
+    background: $blue;
+    .ie & {
+      background: darken($blue, 5%);
+    }
+  }
+}

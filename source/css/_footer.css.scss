@@ -1,0 +1,122 @@
+/* FOOTER
+--------------------------------------------- */
+
+.sub footer {
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  padding: 1.5em 0;
+  background: #0f161e;
+  color: #57626f;
+  position: relative;
+  @include breakpoint(medium) {
+    font-size: 13px;
+    padding: 2em 0;
+  }
+  a {
+    color: lighten(#8a99a9, 3%);
+    &:hover { color: lighten(#8a99a9, 15%) }
+    &:active,
+    &:focus {
+      color: lighten(#8a99a9, 5%);
+    }
+  }
+  &:before {
+    background: transparent image-url("coffeetable.jpg") no-repeat 50% bottom;
+    background-size: 200% auto;
+    position: absolute;
+    z-index: -1;
+    top: -100em;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 100em;
+    width: 100%;
+    @include breakpoint(large) {
+      background-size: 100% auto;
+    }
+    .ie & {
+      background: transparent none;
+    }
+  }
+}
+
+body.download footer:before {
+  top: 0;
+  height: 0;
+  display: none;
+  background: transparent none;
+}
+
+
+/* FOOTER — INDEX
+--------------------------------------------- */
+
+.index footer {
+  background: $blue-dark;
+  padding: em(38) 0 em(36);
+  position: absolute;
+  text-align: center;
+  color: darken($grey, 3%);
+  z-index: 3;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  @include breakpoint(medium) {
+    padding: em(34) 8%;
+  }
+  @include breakpoint(large) {
+    padding: em(40) 0;
+  }
+  h2 {
+    text-rendering: optimizeLegibility;
+    font: 400 em(18)/1.6 $body;
+    letter-spacing: 0;
+    margin: 0 auto;
+    @media (min-width: em(450)) {
+      font-size: 20px;
+    }
+    @include breakpoint(large) {
+      max-width: em(450);
+      font-size: 87.5%;
+      text-align: left;
+      float: left;
+      width: 60%;
+    }
+    a:active {
+      opacity: 0.7;
+    }
+  }
+  .tip {
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    color: mix($grey, $blue-dark, 70%);
+    width: em(210, 12);
+    text-align: center;
+    padding: 10px 0 0;
+    font-size: 12px;
+    line-height: normal;
+    margin: 0 auto;
+    display: block;
+    &:hover {
+      color: $grey;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+    @include breakpoint(large) {
+      padding-top: 6px;
+      font-size: 0.55em;
+    }
+    @media (min-width: em(1500)) and (min-height: em(1200)) {
+      font-size: 15px;
+    }
+  }
+}
+
+.footer-actions {
+  @include breakpoint(large) {
+    float: right;
+  }
+}

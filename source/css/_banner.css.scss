@@ -1,0 +1,208 @@
+
+/* BANNER
+--------------------------------------------- */
+
+.banner {
+  background: $blue image-url("main@mobile.jpg") no-repeat 50% 100%;
+  background-size: cover;
+  position: relative;
+  height: 62%;
+  text-align: center;
+  min-height: em(440);
+  height: calc(78% - 100px);
+  width: 100%;
+  float: left;
+  z-index: 1;
+  .ie & {
+    height: 500px;
+  }
+  .sub & {
+    background: $blue image-url("features@mobile.jpg") no-repeat 50% 50%;
+    min-height: 0;
+    height: auto;
+    background-size: cover;
+    .wrapper {
+      position: relative;
+      height: 100%;
+    }
+  }
+  @include breakpoint(medium) {
+    background-image: image-url("main@1x.jpg");
+    min-height: em(480);
+    .sub & { background-image: image-url("features@1x.jpg") }
+  }
+  @include breakpoint(highres) {
+    background-image: image-url("main.jpg");
+    .sub & { background-image: image-url("features.jpg") }
+  }
+  @media (min-width: em(1500)) {
+    background-image: image-url("main.jpg");
+    .sub & { background-image: image-url("features.jpg") }
+  }
+  @include breakpoint(large) {
+    background-position: 50% 60%;
+    min-height: 0;
+    height: 82%;
+  }
+  @media (min-height: em(700)) and (max-width: em(860)) and (min-width: em(420)) {
+    height: 67%;
+  }
+  @media (min-height: em(800)) and (max-width: em(860)) and (min-width: em(420)) {
+    height: 70%;
+  }
+  @media (min-height: em(1000)) and (max-width: em(1200)) {
+    height: 86%;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba($blue-dark, .04);
+    letter-spacing: -0.002em;
+    word-spacing: -0.009em;
+    position: absolute;
+    top: 49%;
+    left: em(16);
+    right: em(16);
+    .ie & {
+      top: 56%;
+    }
+    @include breakpoint(medium) {
+      left: em(26);
+      right: em(26);
+
+    }
+    @media (max-width: em(360)) {
+      right: em(10);
+      left: em(10);
+    }
+    @media (min-width: em(700)) {
+      font-size: 250%;
+    }
+    @media (min-width: em(780)) {
+      font-size: 275%;
+    }
+    @include breakpoint(large) {
+      margin-left: em(-130);
+      margin-top: em(-15);
+      max-width: em(260);
+      line-height: 1.2;
+      right: auto;
+      left: 50%;
+    }
+    @media (min-width: em(1200)) {
+      font-size: 293.75%;
+    }
+    @media (min-height: em(890)) {
+      top: 50%;
+    }
+  }
+  .logo {
+    margin: em(-90) 0 0 em(-41);
+    position: absolute;
+    display: block;
+    width: em(82);
+    height: em(80);
+    left: 50%;
+    top: 49%;
+    .ie & {
+      top: 56%;
+      height: em(73);
+    }
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+}
+
+
+/* BANNER BOX
+--------------------------------------------- */
+
+.banner-box {
+  position: relative;
+  width: 100%;
+  padding: 7em 0 3.5em;
+  @include clearfix;
+  @include breakpoint(medium) {
+    padding: 9em 0 5.5em;
+  }
+  h1 {
+    position: relative;
+    margin: -0.7em 0 0.5em;
+    top: auto;
+    left: auto;
+    right: auto;
+    @include breakpoint(medium) {
+      margin-top: -1em;
+      margin-bottom: 0.35em;
+    }
+    @media (min-width: em(660)) {
+      font-size: 250%;
+    }
+    @media (min-width: em(940)) {
+      font-size: 275%;
+    }
+    @include breakpoint(large) {
+      margin-top: -1.24em;
+      position: relative;
+      margin-left: auto;
+      max-width: none;
+      left: auto;
+      right: auto;
+    }
+  }
+
+  body.usage & h1,
+  body.download & h1 {
+    margin-top: 1%;
+  }
+
+  .intro {
+    margin: 0 auto;
+    max-width: em(500);
+    color: #b0d2e3;
+    a {
+      box-shadow: -3px 1px 0 2px rgba($blue, 0), 3px 1px 0 2px rgba($blue, 0);
+      -webkit-transition: background .3s ease, box-shadow .3s ease;
+      transition: background .3s ease, box-shadow .3s ease;
+      border-radius: 1px;
+    }
+    a:hover {
+      box-shadow: -3px 1px 0 2px $blue, 3px 1px 0 2px $blue;
+      background: $blue;
+    }
+    a:active {
+      opacity: 0.7;
+    }
+  }
+
+  body.usage & .intro,
+  body.download & .intro {
+    margin-bottom: 2%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    margin-left: 20%;
+    @include breakpoint(medium) {
+      width: 50%;
+      margin-left: 25%;
+    }
+    @include breakpoint(large) {
+      width: 40%;
+      margin-left: 30%;
+    }
+  }
+
+  .img-container {
+    height: 0;
+    position: relative;
+    padding-bottom: 41%;
+    @include breakpoint(medium) {
+      padding-bottom: 35%
+    }
+    @include breakpoint(large) {
+      padding-bottom: 28%;
+    }
+  }
+}

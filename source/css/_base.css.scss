@@ -1,0 +1,177 @@
+
+/* BASE
+--------------------------------------------- */
+
+html,body {
+  min-width: 290px;
+  height: 100%;
+}
+
+html {
+  background: $blue-dark;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+body {
+  font: normal 400 100%/1.6 $body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: $white;
+  .ie & {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+main {
+  height: 100%;
+  .ie & {
+    height: auto;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  min-height: em(720);
+  .ie & {
+    height: 720px;
+  }
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @media (min-width: em(560)) {
+    min-height: em(670);
+  }
+  @include breakpoint(medium) {
+    min-height: em(720);
+  }
+  @include breakpoint(large) {
+    min-height: em(520);
+  }
+  @media (max-width: em(319)) {
+    min-height: em(700);
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 88%;
+  @include breakpoint(large) {
+    max-width: em(800);
+    width: 87%;
+  }
+  @media (min-width: em(1300)) and (min-height: em(800)) {
+    .sub .content & {
+      width: 1120px;
+    }
+  }
+  @media (min-width: em(1400)) and (min-height: em(1000)) {
+    .sub .content & {
+      width: 1160px;
+    }
+  }
+  @media (min-width: em(1800)) and (min-height: em(1300)) {
+    .sub .content & {
+      width: 1340px;
+    }
+  }
+}
+
+.sub .content {
+  float: left;
+  width: 100%;
+  position: relative;
+  @include clearfix;
+}
+
+
+/* SELECTIONS
+--------------------------------------------- */
+
+::-moz-selection {
+  background: rgba($blue, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+::selection {
+  background: rgba($blue, .99) none;
+  text-shadow: none;
+  color: $white;
+}
+
+code::-moz-selection,
+code b::-moz-selection,
+code i::-moz-selection,
+code span::-moz-selection,
+.dwnld-info em::-moz-selection {
+  background: #90ca6c;
+  color: $blue-dark;
+}
+
+code::selection,
+code b::selection,
+code i::selection,
+code span::selection,
+.dwnld-info em::selection {
+  background: #88f549;
+  color: $blue-dark;
+}
+
+img::selection { background: transparent }
+img::-moz-selection { background: transparent }
+
+::selection:window-inactive { background: $grey }
+
+
+/* RESPONSIVE COPY TEXTS
+--------------------------------------------- */
+
+span {
+  display: none;
+  @media (min-width: em(560)) {
+    main &,
+    footer & {
+      display: inline;
+    }
+  }
+  @include breakpoint(large) {
+    header & {
+      display: inline;
+    }
+  }
+}
+
+
+/* TYPE TWEAKS
+--------------------------------------------- */
+
+h1 {
+  text-rendering: optimizeLegibility;
+  font: 700 normal 225%/1.1 $heading;
+  color: $white;
+}
+
+.sub h2 {
+  text-rendering: optimizeLegibility;
+  font-family: $heading;
+  font-weight: 700;
+  font-style: normal;
+  color: $white;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: $white;
+}
+
+i, em, b, strong {
+  font-style: normal;
+  font-weight: 700;
+}

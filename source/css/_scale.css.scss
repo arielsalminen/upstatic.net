@@ -1,0 +1,24 @@
+
+/* SCALE
+--------------------------------------------- */
+
+body {
+  @media (max-width: em(319)) { & { font-size: percentage(14/16) }}
+  @media (min-width: em(400)) { & { font-size: percentage(18/16) }}
+  @media (min-width: em(450)) { & { font-size: percentage(19/16) }}
+  @media (min-width: em(500)) { & { font-size: percentage(20/16) }}
+  @media (min-width: em(1100)) and (min-height: em(750)) { & { font-size: percentage(21/16) }}
+  @media (min-width: em(1150)) and (min-height: em(850)) { & { font-size: percentage(22/16) }}
+  @media (min-width: em(1200)) and (min-height: em(900)) { & { font-size: percentage(23/16) }}
+  @media (min-width: em(1250)) and (min-height: em(950)) { & { font-size: percentage(24/16) }}
+  @media (min-width: em(1300)) and (min-height: em(1000)) { & { font-size: percentage(25/16) }}
+  @media (min-width: em(1350)) and (min-height: em(1050)) { & { font-size: percentage(26/16) }}
+  @media (min-width: em(1400)) and (min-height: em(1100)) { & { font-size: percentage(27/16) }}
+  @media (min-width: em(1450)) and (min-height: em(1150)) { & { font-size: percentage(28/16) }}
+  @media (min-width: em(1500)) and (min-height: em(1200)) { & { font-size: percentage(29/16) }}
+  @media (min-width: em(1550)) and (min-height: em(1250)) { & { font-size: percentage(30/16) }}
+  @media (min-width: em(1600)) and (min-height: em(1300)) { & { font-size: percentage(31/16) }}
+  @media (min-width: em(1650)) and (min-height: em(1350)) { & { font-size: percentage(32/16) }}
+  @media (min-width: em(1700)) and (min-height: em(1400)) { & { font-size: percentage(33/16) }}
+  @media (min-width: em(1750)) and (min-height: em(1450)) { & { font-size: percentage(34/16) }}
+}

@@ -1,0 +1,180 @@
+
+/* USAGE
+--------------------------------------------- */
+
+section.sub {
+  @include clearfix;
+  position: relative;
+  border: 0;
+  padding-top: em(30);
+  text-align: left;
+  margin: 0 auto;
+  width: 98%;
+  float: none;
+  max-width: 540px;
+  @include breakpoint(large) {
+    max-width: 480px;
+    padding-top: em(40);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media (min-width: em(1100)) {
+    font-size: 18px;
+    max-width: 540px;
+  }
+  @media (min-width: em(1400)) and (min-height: em(1000)) {
+    max-width: 600px;
+  }
+  @media (min-width: em(1800)) and (min-height: em(1300)) {
+    max-width: 660px;
+  }
+  a {
+    @media (min-width: em(1400)) and (min-height: em(1000)) {
+      background-position: 0 1.245em;
+    }
+    @media (min-width: em(1500)) and (min-height: em(1100)) {
+      background-position: 0 1.25em;
+    }
+    @media (min-width: em(1800)) and (min-height: em(1300)) {
+      background-position: 0 1.23em;
+    }
+  }
+  p, .changelog li {
+    width: 100%;
+    float: left;
+    clear: both;
+    max-width: none;
+    margin-bottom: 1.5em;
+    @include breakpoint(large) {
+      font-size: 16px;
+    }
+    @media (min-width: em(1100)) {
+      font-size: 18px;
+    }
+    @media (min-width: em(1400)) and (min-height: em(1000)) {
+      font-size: 20px;
+    }
+    @media (min-width: em(1800)) and (min-height: em(1300)) {
+      font-size: 22px;
+    }
+    code {
+      -webkit-font-smoothing: antialiased;
+      font-size: 87.5%;
+      vertical-align: bottom;
+      padding: 0.1em 0.4em;
+    }
+  }
+  .changelog {
+    list-style-type: circle;
+    padding-left: 1.25em;
+    margin-bottom: 1.5em;
+    li {
+      margin-bottom: 0;
+    }
+    @include breakpoint(medium) {
+      padding-left: 0;
+    }
+  }
+  .section-id {
+    @include prevent-user-select;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+    color: lighten(#202934, 11%);
+    position: absolute;
+    display: block;
+    width: 1em;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    &:hover {
+      color: lighten(#202934, 20%);
+    }
+  }
+  h2:not(.focus) {
+    @include breakpoint(large) {
+      margin-left: -1em;
+      padding-left: 1em;
+      &:hover {
+        .section-id {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  h2,
+  h3 {
+    clear: both;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    border-radius: 5px;
+    width: auto;
+    position: relative;
+    float: left;
+    margin-top: 1em;
+    &.focus {
+      z-index: 9999;
+      background: #f0e300;
+      box-shadow: 0 3px 6px rgba(0,0,0, .7), inset 0 0 2px #f5e600;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2ef01), color-stop(100%, #ebca00));
+      background-image: -webkit-linear-gradient(top, #f2ef01, #ebca00);
+      background-image: linear-gradient(to bottom, #f2ef01, #ebca00);
+      color: #000;
+      &:after {
+        z-index: -1;
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba($white, .1);
+      }
+    }
+  }
+
+  ul {
+    float: left;
+    width: 100%;
+  }
+
+  pre {
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    float: left;
+    max-width: none;
+    height: auto;
+    white-space: pre;
+    white-space: pre-wrap;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    word-wrap: break-word;
+    margin: 2em auto 2em;
+    width: 100%;
+    @include breakpoint(large) {
+      margin: 3em 0 3em -8.25%;
+      width: 117.5%;
+    }
+    @media (min-width: em(1400)) and (min-height: em(1000)) {
+      width: 130%;
+      margin-left: -15%;
+    }
+    code {
+      display: block;
+      position: relative;
+      @include breakpoint(large) {
+        padding: 3em 3em 4em;
+      }
+      @media (min-width: em(1400)) and (min-height: em(1000)) {
+        padding: 4em 5.3em 5.5em;
+        line-height: 1.7;
+        font-size: 17px;
+      }
+    }
+  }
+}

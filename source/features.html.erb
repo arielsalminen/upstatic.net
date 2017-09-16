@@ -1,0 +1,85 @@
+---
+title: Features — Upstatic
+description: Amazon S3 is great for hosting static websites, but it can be challenging to set up and optimize. Not anymore!
+banner: <div class="img-container"><img src="/img/folder.png" alt=""></div><h1>Deploy to the cloud with&nbsp;ease</h1><p class="intro">Amazon&nbsp;S3 is great for hosting static websites, but&nbsp;it&nbsp;can&nbsp;be challenging to set up and optimize.&nbsp;Not&nbsp;anymore!</p>
+---
+
+<section>
+  <h2>Easiest way to&nbsp;deploy</h2>
+  <p>Upstatic makes deploying to <a href="http://aws.amazon.com/s3/" rel="external">Amazon&nbsp;S3</a> as easy as pushing changes to GitHub. It automatically creates S3&nbsp;bucket and configures that for website hosting—all&nbsp;you&nbsp;need is Amazon&nbsp;credentials.</p>
+  <pre id="terminal"><code>upstatic deploy<i class="cursor"></i></code>
+<span class="progress"></span>
+<span class="progress-ongoing">Deploying…</span>
+<span class="progress-done">Done!</span>
+</pre>
+</section>
+
+<section class="alt">
+  <h2>Optimized for speed</h2>
+  <p>Average deploy time with Upstatic is only 3 seconds when using concurrent file uploads. Upstatic also <a href="/usage/">keeps&nbsp;track</a> of&nbsp;all your changes and deploys only the&nbsp;files that have&nbsp;changed.</p>
+  <div class="graph">
+    <div class="bar-1"></div>
+    <div class="bar-2"></div>
+    <div class="bar-3"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Gzipping and caching</h2>
+  <p>All your files are Gzipped, cached and distributed globally using Amazon’s content delivery network. You&nbsp;can let Upstatic configure Gzipping and Cache-Control headers or&nbsp;<a href="/usage/">define&nbsp;your&nbsp;own</a>.</p>
+  <pre><code><b>[Extension.html]</b>
+ContentType  = "text/html"
+CacheControl = "public,
+                max-age=0"
+</code></pre>
+</section>
+
+<section class="alt">
+  <h2>Multiple user accounts</h2>
+  <p>Supports multiple <a href="/usage/">user accounts</a>, so&nbsp;you can use Upstatic for both commercial and personal projects. There’s no limit on the number of&nbsp;accounts&nbsp;either.</p>
+  <%= image_tag "devices.png", :alt => "Upstatic supports multiple user accounts" %>
+</section>
+
+<section>
+  <h2>Redirects and error&nbsp;pages</h2>
+  <p>Upstatic makes it easy to <a href="/usage/">set up redirects</a>, which can be challenging to do via Amazon’s own interface. We provide support for custom 404&nbsp;error&nbsp;pages and server MIME&nbsp;Types&nbsp;too.</p>
+  <pre><code><b>[Redirect]</b>
+Rules = [
+  ["/old", "/new"]
+  ["/ups", "/upstatic"]
+]
+</code></pre>
+</section>
+
+<section class="alt">
+  <h2>Mac, Windows and&nbsp;Linux</h2>
+  <p>Written in Go, so Upstatic will work on almost any platform. Just <a href="/download/">download</a> the package and follow the instruc&shy;tions. If you’re using Mac OS X, you can&nbsp;also install&nbsp;via Homebrew: <code>brew&nbsp;install&nbsp;upstatic</code></p>
+  <a href="/download/" title="Download for Mac OS X, Windows or Linux"><%= image_tag "os.png", :alt => "Download for Mac OS X, Windows or Linux" %></a>
+</section>
+
+<section class="quotes-wrapper">
+  <h2 class="hide">What people are saying</h2>
+  <ul class="quotes">
+    <li class="quote-1">
+      <div class="quote">Deploying to S3 was the last painful bar&shy;rier between me and silky-smooth static sites. Upstatic removed&nbsp;it.</div>
+      <a href="https://twitter.com/jonikorpi" rel="external" class="by">— Joni Korpi</a>
+    </li>
+    <li class="quote-2">
+      <div class="quote">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia ad minim venim lorem ipsum.</div>
+      <a href="https://twitter.com/brad_frost" rel="external" class="by">— Brad Frost</a>
+    </li>
+    <li class="quote-3">
+      <div class="quote">Why didn’t I move all my websites to S3 earlier? It’s so much faster and cheaper to host everything&nbsp;there.</div>
+      <a href="https://twitter.com/viljamis" rel="external" class="by">— Viljami Salminen</a>
+    </li>
+    <li class="quote-4">
+      <div class="quote">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id&nbsp;est.</div>
+      <a href="https://twitter.com/benbrignell" rel="external" class="by">— Ben Brignell</a>
+    </li>
+  </ul>
+</section>
+
+<section class="download">
+  <h2>Download and start using now, it’s&nbsp;free!</h2>
+  <div><a href="/download/" class="btn">Download</a> <span class="btn-separator">or</span> <a href="#" class="btn btn-secondary">View on GitHub</a></div>
+</section>
